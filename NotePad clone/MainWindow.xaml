@@ -1,0 +1,27 @@
+﻿<Window x:Class="NotePad_clone.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotePad_clone"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--Base Grid-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--Header-->
+            <RowDefinition Height="32"/>
+            <!--Body-->
+            <RowDefinition />
+            <!--Footer-->
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+        
+        <!--Header-->
+        
+        <!--Body-->
+        
+        <!--Footer-->
+        
+    </Grid>
+</Window>
