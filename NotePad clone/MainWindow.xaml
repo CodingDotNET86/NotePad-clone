@@ -10,18 +10,96 @@
     <Grid>
         <Grid.RowDefinitions>
             <!--Header-->
-            <RowDefinition Height="32"/>
+            <RowDefinition Height="40"/>
             <!--Body-->
             <RowDefinition />
             <!--Footer-->
-            <RowDefinition Height="28"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         
         <!--Header-->
-        
+        <Rectangle Fill="{StaticResource HeaderFooter}" />
+        <!--Menu-->
+        <Menu Background="Transparent" VerticalContentAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource HeaderFooterText}">
+            <MenuItem Header="File" VerticalAlignment="Center" Background="{StaticResource HeaderFooter}">
+                <MenuItem Header="New" InputGestureText="CTRL+N" />
+                <MenuItem Header="New Window" InputGestureText="CTRL+Shift+N" />
+                <MenuItem Header="Open" InputGestureText="CTRL+O" />
+                <MenuItem Header="Save" InputGestureText="CTRL+S" />
+                <MenuItem Header="Save As" InputGestureText="CTRL+Shift+S" />
+                <Separator />
+                <MenuItem Header="Page Setup" />
+                <MenuItem Header="Print" InputGestureText="CTRL+P" />
+                <MenuItem Header="Exit" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" IsEnabled="False" InputGestureText="CTRL+Z" />
+                <Separator />
+                <MenuItem Header="Cut" IsEnabled="False" InputGestureText="CTRL+X" />
+                <MenuItem Header="Copy" IsEnabled="False" InputGestureText="CTRL+C" />
+                <MenuItem Header="Paste" IsEnabled="True" InputGestureText="CTRL+V"/>
+                <MenuItem Header="Delete" IsEnabled="False" InputGestureText="Del" />
+                <Separator />
+                <MenuItem Header="Find" IsEnabled="False" InputGestureText="CTRL+F"/>
+                <MenuItem Header="Find Next" IsEnabled="False" InputGestureText="F3" />
+                <MenuItem Header="Find Previous" IsEnabled="False" InputGestureText="Shift+F3" />
+                <MenuItem Header="Replace" IsEnabled="False" InputGestureText="CTRL+H" />
+                <MenuItem Header="Go to" IsEnabled="True" InputGestureText="CTRL+G" />
+                <Separator />
+                <MenuItem Header="Select all" IsEnabled="True" InputGestureText="CTRL+A" />
+                <MenuItem Header="Time/Date" IsEnabled="True" InputGestureText="F5" />
+                <Separator />
+                <MenuItem Header="Font" IsEnabled="True" InputGestureText="CTRL+0" />
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="Zoom">
+                    <MenuItem Header="Zoom in"  InputGestureText="CTRL+Plus"/>
+                    <MenuItem Header="Zoom out" InputGestureText="CTRL+Minus" />
+                    <MenuItem Header="Restore default zoom" InputGestureText="CTRL+0"/>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Status" IsCheckable="True" IsChecked="True" />
+                <MenuItem Header="Word Wrap" IsCheckable="True" IsChecked="True" />
+            </MenuItem>
+        </Menu>
+
         <!--Body-->
-        
+        <Rectangle Fill="{StaticResource Body}" Grid.Row="1" />
+        <TextBox Grid.Row="1" Background="Transparent" BorderThickness="0" Padding="20"
+                 FontSize="16" FontFamily="Lucida Console" Foreground="{StaticResource BodyText}" CaretBrush="White"
+                 AcceptsReturn="True" TextWrapping="Wrap"/>
+
         <!--Footer-->
+        <Rectangle Fill="{StaticResource HeaderFooter}" Grid.Row="2" />
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            
+            <!--Stats col/ln-->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                <TextBlock Text="Ln" Margin="0,0,5,0" />
+                <TextBlock x:Name="LineCountText" Text="0" />
+                <TextBlock Text=", " />
+                <TextBlock Text="Col" Margin="0,0,5,0" />
+                <TextBlock x:Name="ColumnCountText" Text="0" />
+            </StackPanel>
+            <!--zoom-->
+            <TextBlock Grid.Column="1" Text="100%" VerticalAlignment="Center" Margin="10,0" />
+            <Rectangle Width="1" Grid.Column="1" HorizontalAlignment="Left" Fill="#FF232323" Margin="0 5 " />
+            <!--format-->
+            <TextBlock Grid.Column="2" Text="Windows (CRLF)" VerticalAlignment="Center" Margin="10,0" />
+            <Rectangle Width="1" Grid.Column="2" HorizontalAlignment="Left" Fill="#FF232323" Margin="0 5 " />
+            <!--encoding-->
+            <TextBlock Grid.Column="3" Text="UTF-8" VerticalAlignment="Center" Margin="10,0" />
+            <Rectangle Width="1" Grid.Column="3" HorizontalAlignment="Left" Fill="#FF232323" Margin="0 5 " />
+            
+        </Grid>
+        
         
     </Grid>
 </Window>
